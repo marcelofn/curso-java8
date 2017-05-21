@@ -32,6 +32,18 @@ public class Testes {
 		System.out.println(palavras);
 
 		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		
+		
+		new Thread(new Runnable() {
 
+		    @Override
+		    public void run() {
+		        System.out.println("Executando um Runnable");
+		    }
+
+		}).start();
+		
+		
+		
 	}
 }
