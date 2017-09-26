@@ -20,11 +20,9 @@ public class Testes {
 
 		System.out.println(palavras);
 
+		//Lambda
 		palavras.forEach(s -> System.out.println(s));
-		
-		
-		
-
+		//Lambda
 		palavras.sort((s1, s2) -> {
 			if (s1.length() < s2.length()) {
 				return -1;
@@ -35,20 +33,18 @@ public class Testes {
 			return 0;
 		});
 		System.out.println(palavras);
-
+		
+		//Lambda menor ainda
 		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
-		
-		
+
 		new Thread(new Runnable() {
 
-		    @Override
-		    public void run() {
-		        System.out.println("Executando um Runnable");
-		    }
+			@Override
+			public void run() {
+				System.out.println("Executando um Runnable");
+			}
 
 		}).start();
-		
-		
-		
+
 	}
 }
