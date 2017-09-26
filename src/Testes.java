@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
 public class Testes {
 
 	public static void main(String[] args) {
@@ -19,6 +21,9 @@ public class Testes {
 		System.out.println(palavras);
 
 		palavras.forEach(s -> System.out.println(s));
+		
+		
+		
 
 		palavras.sort((s1, s2) -> {
 			if (s1.length() < s2.length()) {
