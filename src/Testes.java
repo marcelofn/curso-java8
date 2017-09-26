@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 
@@ -20,9 +21,9 @@ public class Testes {
 
 		System.out.println(palavras);
 
-		//Lambda
+		// Lambda
 		palavras.forEach(s -> System.out.println(s));
-		//Lambda
+		// Lambda
 		palavras.sort((s1, s2) -> {
 			if (s1.length() < s2.length()) {
 				return -1;
@@ -33,9 +34,12 @@ public class Testes {
 			return 0;
 		});
 		System.out.println(palavras);
-		
-		//Lambda menor ainda
+
+		// Lambda menor ainda
 		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		
+		palavras.sort(Comparator.comparing(s -> s.length()));
+		palavras.sort(Comparator.comparing(String::length));
 
 		new Thread(new Runnable() {
 
@@ -46,5 +50,8 @@ public class Testes {
 
 		}).start();
 
+		new Thread(() -> System.out.println("Executando um Runnable")).start();
+
 	}
+
 }
